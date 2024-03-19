@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TipCalculator.MainPage">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="10,0"
+            Spacing="10">
+
+            <Label
+                Text="Valor da gorjeta"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Entry
+                x:Name="ValueEntry"
+                Placeholder="Digite o valor do pedido"/>
+
+            <Label Text="Tip:"/>
+            <Label Text="0.00" x:Name="LabelTipValue" />
+
+            <Label Text="Total:"/>
+            <Label Text="0.00" x:Name="LabelTotalValue"/>
+
+            <Label Text="Tip Percentage:"/>
+            <Label Text="0%" x:Name="LabelPercentageValue"/>
+
+            <Slider
+                x:Name="SliderTipPercent"
+                Minimum="0"
+                Maximum="100"
+                ValueChanged="SliderTipPercent_ValueChanged"
+                />
+
+            <StackLayout HorizontalOptions="Center" Margin="0,0,0,0">
+                <StackLayout Orientation="Horizontal">
+            <Button
+                HeightRequest="50"
+WidthRequest="200"
+                x:Name="Button15Percent"
+                Text="15%" 
+                HorizontalOptions="Center" 
+                Clicked="OnButton15PercentClicked"
+                />
+
+            <Button
+                Margin="50,0,0,0"
+                HeightRequest="50"
+                WidthRequest="200"
+                x:Name="Button20Percent"
+                Text="20%" 
+                HorizontalOptions="Center"
+                Clicked="OnButton20PercentClicked"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Margin="0,0,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Button
+                        HeightRequest="50"
+WidthRequest="200"
+                x:Name="ButtonRoundDown"
+                Text="Arredondar para baixo" 
+                HorizontalOptions="Center"
+                Clicked="OnButtonRoundDownClicked"/>
+
+            <Button
+                Margin="50,0,0,0"
+                HeightRequest="50"
+WidthRequest="200"
+                x:Name="ButtonRoundUp"
+                Text="Arredondar para cima" 
+                HorizontalOptions="Center"
+                Clicked="OnButtonRoundUpClicked"/>
+                </StackLayout>
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
